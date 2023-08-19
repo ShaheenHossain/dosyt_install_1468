@@ -58,7 +58,7 @@ sudo apt-get install git python3 python3-pip build-essential wget python3-dev py
 sudo pip3 install psycopg2-binary pdfminer.six -y
 
 echo -e "\n---- Install python packages/requirements ----"
-sudo -H pip3 install -r https://raw.githubusercontent.com/dosyt/dosyt/14.0/requirements.txt
+sudo -H pip3 install -r https://raw.githubusercontent.com/ShaheenHossain/dosyt-14.0/master/requirements.txt
 
 echo -e "\n---- Installing nodeJS NPM and rtlcss for LTR support ----"
 sudo apt-get install nodejs npm -y
@@ -152,7 +152,7 @@ sudo su root -c "printf 'logfile = /var/log/${OE_USER}/${OE_CONFIG}.log\n' >> /e
 if [ $IS_ENTERPRISE = "True" ]; then
     sudo su root -c "printf 'addons_path=${OE_HOME}/enterprise/addons,${OE_HOME_EXT}/addons\n' >> /etc/${OE_CONFIG}.conf"
 else
-    sudo su root -c "printf 'addons_path=${OE_HOME_EXT}/dosyt/addons,${OE_HOME}/custom/addons\n' >> /etc/${OE_CONFIG}.conf"
+    sudo su root -c "printf 'addons_path=${OE_HOME_EXT}/addons,${OE_HOME}/custom/addons\n' >> /etc/${OE_CONFIG}.conf"
 fi
 sudo chown $OE_USER:$OE_USER /etc/${OE_CONFIG}.conf
 sudo chmod 640 /etc/${OE_CONFIG}.conf
